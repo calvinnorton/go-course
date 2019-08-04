@@ -49,3 +49,15 @@ func TestFibonacciZeroValue(t *testing.T) {
 		t.Error("TestFibonacciZeroValue: Output not as expected. Received:", actual, "Expected:", expected)
 	}
 }
+
+func TestFibonacciNegativeValue(t *testing.T) {
+	var buffer bytes.Buffer
+	out = &buffer
+	fib(-1)
+	expected := "Value too low, please choose a positive integer."
+	actual := buffer.String()
+
+	if expected != actual {
+		t.Error("TestFibonacciNegativeValue: Output not as expected. Received:", actual, "Expected:", expected)
+	}
+}
