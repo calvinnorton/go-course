@@ -20,9 +20,7 @@ func fib(n int) {
 	}
 	for i := 0; i < n; i++ {
 		fmt.Fprintln(out, current)
-		valueHolder := current
-		current = previous + current
-		previous = valueHolder
+		previous, current = current, previous+current
 	}
 }
 
